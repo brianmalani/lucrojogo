@@ -16,9 +16,14 @@
         background-color: #333;
         color: #fff;
     }
+    .game-title {
+        color: #007bff;
+        text-align: center;
+    }
+    
     #game-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: 80%;
     }
@@ -26,6 +31,9 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 10px;
+        background-color: #222;
+        padding: 10px;
+        border-radius: 20px;
     }
     .card {
         width: 100px;
@@ -35,6 +43,10 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        border-radius: 10px;
+    }
+    .card:hover{
+        background-color: #c2a2d2;
     }
     .card.revealed {
         background-color: orange;
@@ -66,23 +78,80 @@
         z-index: 9999;
         display: none;
     }
+    .control-btn-tks,
+    .control-btn-play,
+    .control-btn-rst {
+        margin: 5px 10px; 
+        border-radius: 5px;
+    }
+    
+/* Unique styles for each button */
+.control-btn-tks {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.control-btn-play {
+    background-color: #007bff; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.control-btn-rst {
+    background-color: #dc3545; /* Red */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+/* Change the color of the buttons on hover */
+.control-btn-tks:hover,
+.control-btn-play:hover,
+.control-btn-rst:hover {
+    filter: brightness(85%);
+}
 
 </style>
 </head>
 <body>
     <body>
-        <script src="gameLogic.js"></script>
-    
-        <div class="header">
-            <h1>Lucrojogo</h1>
-        </div>
-    
+
         <div id="game-container">
+
             <div id="game-board"></div>
             <div id="controls">
-                <button onclick="buyTokens()">Buy Tokens</button>
-                <button onclick="playRound()">Play Round</button>
-                <button onclick="resetGame()">Reset Game</button>
+            <h3 class="game-title">LUCROJOGO</h3>
+
+                <button class="control-btn-tks" onclick="buyTokens()">Buy Tokens</button>
+                <button class="control-btn-play" onclick="playRound()">Play Round</button>
+                <button class="control-btn-rst" onclick="resetGame()">Reset Game</button>
                 <div>
                     <p>Bankroll: <span id="bankroll">4000</span></p>
                     <p>Tokens Left: <span id="tokens-left">0</span></p>
