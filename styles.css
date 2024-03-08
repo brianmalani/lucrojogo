@@ -1,0 +1,61 @@
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #333;
+        color: #fff;
+    }
+    #game-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+    }
+    #game-board {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 10px;
+    }
+    .card {
+        width: 100px;
+        height: 100px;
+        background-color: #555;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .card.revealed {
+        background-color: orange;
+    }
+    .card.mine {
+        background-color: #ff0000;
+    }
+    .header {
+        font-size: 24px;
+        margin-bottom: 20px;
+        justify-content: center;
+        flex: auto;
+        display: inline-block;
+    }
+    #controls {
+        width: 20%;
+        padding: 10px;
+        background-color: #222;
+    }
+    #message-box {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 9999;
+        display: none;
+    }
